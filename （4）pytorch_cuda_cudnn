@@ -1,0 +1,74 @@
+镜像源
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+
+先将ubuntu自身的显卡驱动给卸载了，再安装nvidia的显卡驱动
+https://www.qingsword.com/qing/1020.html
+
+
+安装参考网址
+https://blog.csdn.net/abcdefg90876/article/details/105781005/
+
+
+驱动
+直接在电脑自带的软件与更新里面安装驱动，驱动只能安装440的，不能安装450的，安装450的会造成死机（反正不能装最新的），安装完成后重启，用  nvidia-smi 查看安装成功没有，这里安装成功后会显示一个cuda10.2的   这个只能说明那个安装的驱动最高可以适配cuda10.2,不能说明就已经安装好了cuda10.2了，所以后面安装cuda的时候还得重离线文件里面安装。
+
+
+cuda篇
+在安装cuda时，自己试了一下，直接在终端输入安装的440驱动，会导致电脑开机时重复启动的问题，如果不安装驱动就马上安装cuda，会安装失败，不知道为什么。在安装驱动之前需要先降低一下gcc  g++的版本，版本太高了会导致后面cuda安装失败，还需要禁用ubuntu18自带的驱动，（https://blog.csdn.net/m0_46302454/article/details/107530257）
+所以需要在  软件与更新   中直接安装440的驱动，先把驱动安装了，在本地安装cuda
+注意安装cuda时必须得用sudo 开头（sudo sh cuda文件名），不然中途需要管理员权限的时候就很扎心，其中需要点yes或者no的可以参考下面的
+https://blog.csdn.net/qq_43030766/article/details/91513501
+
+多个cuda版本之间切换的问题
+这个里面有解决方案
+第一个：https://blog.csdn.net/tracelessle/article/details/106872211
+第二个：https://blog.csdn.net/weixin_42106049/article/details/85065489
+
+注意：
+cuda在修改环境变量的时候得有两个操作
+先照着第一个网址中的修改环境变量操作，需要添加的内容采用他的  推荐采用   的这个内容
+
+接着参照第二个网址采用  办法二  进行操作
+因为第一个网址中的的推荐操作没有版本号，是为了在以后多个cuda方便切换，所以在第二个网址中需要将版本号去掉
+如：
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-9.0/lib64
+改为：
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+
+
+多个cuda版本切换操作
+记住，删除软链接必须得在/usr/local/文件下打开终端
+sudo rm -rf cuda
+sudo ln -s cuda-9.0 cuda
+
+
+nvcc -V查看cuda的版本号
+nvidia-smi查看GPU使用情况
+这两个里面的cuda版本不需要必须对应一致
+https://blog.csdn.net/qxqxqzzz/article/details/103453413
+
+
+cuda10.1下载失败，下载的是.run文件，这个网址介绍的是下载.deb文件（已解决，要一直在那个下载界面，后面得时候存在下载慢，所以就会失败）
+https://www.jianshu.com/p/258874302540
+
+
+已有高版本10.0 安装低版本的教程
+https://www.cnblogs.com/lyl0618/p/13714191.html
+
+
+
+cudnn安装
+cudnn也需要下载离线文件  选择 for linux 的文件   不能下载.deb的文件   因为最后的安装步骤和win系统很像，只需要拷贝文件就行了
+安装的时候打开终端的位置不能在cuda之中，解压出来的文件名字就是cuda   
+解压命令  sudo tar zxvf 文件名
+https://blog.csdn.net/wanzhen4330/article/details/81699769#cudnn%E7%9A%84%E5%AE%89%E8%A3%85
+他这个网址是正确的，里面的cudnn的安装步骤是正确的
+
+
+

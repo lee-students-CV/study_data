@@ -1,0 +1,35 @@
+方法一（不推荐）：
+
+先在pycharm官网下载安装包，再进行离线安装！
+
+pycharm2019.3.3破解（安装pycharm时注意不能下最新版的  没有破解文件  可以下专业版  可以下载2019.3.3版本的 这个版本可以被破解，由于每次打开时都需要在命令中打开，所以得找一个办法让其有桌面文件）
+sh pycharm.sh
+https://www.liangzl.com/get-article-detail-181072.html
+
+
+pycharm设置快捷方式
+https://blog.csdn.net/weixin_44312186/article/details/98443374
+
+
+pycharm中设置为anaconda的环境（其实没啥好配置的，就是选择bin文件下的python）
+https://blog.csdn.net/s09094031/article/details/82747177
+
+以上是自己安装第三方的pycharm软件，在打开外部的文件时会存在问题，只能打开ubuntu里面的文件，不能打开win中的文件，因而需要在ubuntu软件商城下载pycharm软件，这里他下载的是最新版本，在破解方面存在一定的困难。
+如果在软件商城下载pycharm失败，就需要多等待一定的时间才会安装上。
+
+
+
+方法二（推荐）：
+尽量在ubuntu商店里面下载pycharm2020软件，这里下载比较慢，需要多等待一段时间。
+
+（2020.11.23破解成功）
+2020的破解教程
+https://www.bilibili.com/read/cv7395468/
+
+
+安装参数设置（2020.11.26）
+f9fF1I/ygZI7Ff14sigGMZmZ7KJkhsM364o6exiukAqGORVXN1e4Fk4B8+hGSl5B+iLp9nIA2pSNhNGlxnDgSV3xC85CGVvWY9SWa+ECeWhJZ1+hitDPCNw5lKaRBnxIKhAfQ3aJl4S5WmrOkfKoIuz3UXVoX7hZGxofqQtzfuc
+若以上安装参数失效，不能破解软件，可以在上面网址中，找网友的评论，会有一个可以使用的安装参数
+
+pycharm鼠标滚动放大缩小设置
+https://blog.csdn.net/weixin_43857827/article/details/106350022

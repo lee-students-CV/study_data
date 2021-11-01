@@ -1,0 +1,7 @@
+sudo apt 出现错误时换为
+使用
+sudo aptitude install
+
+选择时  第一个为n
+	第二个为y
+	第三个为y

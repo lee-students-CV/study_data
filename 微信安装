@@ -1,0 +1,18 @@
+安装教程
+https://blog.csdn.net/weixin_38369492/article/details/107019442
+
+
+
+注意：
+在第四步，下载安装的时候，需要下载最新版的微信.deb文件,将文件放入deepin-wine-for-ubuntu中
+同时，之前执行的  sudo ./install.sh   这个文件存在问题，  由于最新版的微信.deb文件需要的版本较高，install.sh不能满足条件，所以需要用官方的 install_2.8.22.sh  
+命令就更改为sudo sh ./install_2.8.22.sh
+接着再安装就行了
+
+
+
+实在不懂安装过程中的问题就浏览官网的教程说明
+在gitee目录里面
+https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
+
+

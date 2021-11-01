@@ -1,0 +1,135 @@
+中科大的镜像源
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+
+清华源
+channels:
+  - defaults
+show_channel_urls: true
+channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda
+default_channels:
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro
+  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
+custom_channels:
+  conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+  simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
+
+
+换源操作
+换中科大的源时，直接将那几个命令输入至终端运行就可以了
+换清华源时，输入 gedit ~/.condarc 将上面的内容复制进去。
+
+方法一（不推荐，有问题）：
+torch安装
+https://blog.csdn.net/wuzhiwuweisun/article/details/82753403
+可以参考上面那篇文章里面的安装pytorch，这个里面是离线安装，先将安装包下载好了过后再进行安装。
+
+
+方法二（推荐，前提是流量足够）：
+2020.11..23（可以先看最后一步的示例）
+将源换成了清华源，再用官方的命令进行安装（pytorch的官方网址：https://pytorch.org/）
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch
+在这里会存在安装失败，是因为里面的mkl cudatoolkit pytorch 在国外，会安装失败，就需要进行离线安装（2020.11.23第一次将命令输入进去，以上上个包安装失败，又再次将官方的安装命令输入至终端进行安装，这时安装的包就是上次未安装成功的那几个包，还是很慢！！！第一次重试只安装好了mkl，其他两个失败。）换成了中科大的源，再次重试(失败，直接失败。。。。)。再次换回清华源，再次重试,由于换了一次中科大的源，失败更严重了，所以这里不能更换为中科大的源。再次换为清华源，将https：//换为http，不然要失败，这里就成功了，参考网址
+https://www.jb51.net/article/196074.htm
+
+
+成功换成了清华源后，下载包时网速比较快，不会存在失败的情况，如果失败了就将安装命令多运行几次，重复安装也是可以的
+结论
+清华源有用，中科大的不行
+
+
+安装之前需要换源，也就是这个文档最开始的那几个清华的源，同时换了源后，创建新环境也很慢，就需要在环境后面加上清华的镜像源，自己创建的时候注意把前面环境的名称和python的版本进行更改。
+
+
+换源
+https://blog.csdn.net/weixin_43287414/article/details/108791177
+按照这里面的教程将所有的换成了清华源,注意得把https改为http,不然下载还是很慢,
+
+
+
+cuda创建环境指定路径
+https://blog.csdn.net/kupepoem/article/details/101023289
+
+
+conda create -n jjenv python=3.6 -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+
+完美解决上述所有问题
+
+以上的操作过程是安装pytorch包的过程
+如果需要的是以tensorflow为框架的就不适用，需要自己在网上去找教程。但是安装tensorflow时还是需要提前换源，按照上面的步骤换成清华源，再进行其他的操作。
+
+
+实例：
+1.先创建环境名称，打开终端（安装包的前提是之前的步骤都操作正确！！！）
+conda create -n pytorch1.2_cuda9.2 python=3.7
+解释
+pytoch1.2_cuda9.2  这个是我自己创建的名称，是为了记忆方便，意思是我要安装的是pytorch1.2版本，cuda9.2版本的
+python=3.7     这个是指明这个环境运用的python版本是哪一版的
+
+创建成功后，在/home/hzq/anaconda3/envs路径下可以看到自己创建的环境
+
+
+2.激活环境
+conda activate pytorch1.2_cuda9.2
+
+3.安装相应的包
+在官方的网址（https://pytorch.org/get-started/previous-versions/）这个网址是老版本的安装命令集合
+conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch
+
+4.安装成功验证
+pip list
+查看是否有torch   1.2  的包出现
+
+
+5.安装其他包
+5.1安装opencv-pthon=4.4.0.46
+   conda install opencv-python==4.4.0.46
+   一般情况下会直接安装成功。（需要安装什么就直接运行什么就可以了，如果需要控制版本号的话，记住等于符号有两个，4.4.0.46就是包的版本号）
+
+5.2离线安装
+如果上面的命令安装失败了，就需要离线安装。
+谷歌搜索 opencv-python，找到网页出现的opencv-python.PyPI，以后离线安装时只需要找到.PyPI的就可以了
+点击进入，如果要下载老版本的，点击release history，找自己需要的版本
+然后点download files 点击右边的opencv_python-4.4.0.46-cp37-cp37-manylinux2014_x86_64.whl (49.5 MB)	
+因为自己的python是3.7版本的，所以这里的cp得为37才行，ubuntu的下载x86_64的就可以了
+下载完之后，如果我需要安装在之前的环境中（pytorch1.2_cuda9.2）
+5.2.1打开环境目录
+     /home/hzq/anaconda3/envs/pytorch1.2_cuda9.2/lib/python3.7/site-packages
+     将下载的文件拷贝至site-packages这个文件夹中
+5.2.2安装
+     在这个文件夹中运行终端
+     hzq@hzqwm:~/anaconda3/envs/pytorch1.2_cuda9.2/lib/python3.7/site-packages$ 
+ 
+     pip install opencv_python-4.4.0.46-cp37-cp37-manylinux2014_x86_64.whl
+    后面的这个就是下载下来的文件名称
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

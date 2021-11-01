@@ -1,0 +1,11 @@
+https://blog.csdn.net/yinwangde/article/details/89439648?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160516362119724836751591%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=160516362119724836751591&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-4-89439648.pc_first_rank_v2_rank_v28&utm_term=ubuntu16.04%E4%B8%8B%E5%AE%89%E8%A3%85nvidia%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8&spm=1018.2118.3001.4449
+
+
+进入了tty后需要退出来按   ctrl+alt+f7
+
+
+关闭图形界面是sudo service lightdm stop
+开启则是      sudo service lightdm start
+
+
+如果是ubuntu18及以上的版本  安装驱动时直接在系统中自带的  软件和更新  -->>  附加驱动   里面找  尽量不要安装最新的驱动   安装倒数第二个都可以

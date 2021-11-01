@@ -1,0 +1,66 @@
+这个里面有详细的介绍 驱动 anaconda pycharm cuda
+https://blog.csdn.net/xjgao75/article/details/105869699#UbuntuNVDIA_52
+
+
+
+删除双系统中的ubuntu
+https://blog.csdn.net/guikunchen/article/details/88077330
+
+对文件获得管理员权限
+https://blog.csdn.net/qq_20515461/article/details/90747303
+
+
+
+
+
+
+
+
+google输入法
+https://blog.csdn.net/xiaokingzi/article/details/88396590
+
+
+anaconda创建新环境慢的问题
+1.终端中更换源（有效）
+https://blog.csdn.net/qq_34301511/article/details/106798313
+
+
+anaconda创建环境位置发生了变化，不在anaconda文件夹下面的envs里面了
+/home/hzq/.conda/envs（绝大部分情况下假的）
+
+
+先是要安装pytorch，将pytorch安装好后才能知道安装哪个版本的cuda(假)
+
+创建新环境时必须得换源  
+https://blog.csdn.net/weixin_41868104/article/details/103779181
+
+首先要安装nvidia的驱动     查看驱动是否安装成功  nvidia-sim
+
+
+不能使用搜狗输入法，会与anaconda安装冲突，会造成系统无相应
+
+
+
+需要查看cuda是否安装成功
+
+
+文件从根目录复制到电脑D  F  G  E盘时  显示文件是只读的
+https://jakting.com/archives/ubuntu-rw-windows-files.html
+这个网址中的解决文件系统突然变成只读这一部分可用
+
+
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+
+右键创建新文档快捷方式
+https://jingyan.baidu.com/article/6079ad0ecbc85428ff86dbdc.html
+
+
+
+将etx文件格式转化为ntfs，便于安装win10
+https://blog.csdn.net/weixin_40920349/article/details/80964825
