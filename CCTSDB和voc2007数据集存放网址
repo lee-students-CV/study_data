@@ -1,9 +1,16 @@
+在下载数据集之前，先看一下明德楼640台式电脑，D盘->HZQ->jtrafficsigns这下面的两个文件夹里面有没有数据集，没有的话在自己单独下载。
+
+
+
 CCTSDB数据集存放网址，是在google云盘里面的，自己如果要下载的话需要翻墙才能下载，google云盘下载不限速!
 这个数据集已经制作为VOC的格式，不需要自己再转换一遍。
 CCTSDB数据集是中国交通标志数据集，是长沙理工大学开源的一个数据集。
-
+https://drive.google.com/file/d/1VLliwF6xs45C6E_XWOsSWcWUFMrildtO/view?usp=sharing
 
 
 VOC2007数据集是一个开源的数据集，种类有20个。
 https://drive.google.com/file/d/1LpQOFYK0T1451EZ50suq2uPMV6kan_tQ/view?usp=sharing
+
+voc2012数据集网址，我不确定是否上传完整
+https://drive.google.com/drive/folders/1bnAt1zw8vU-oaFk1mdu70ZGpvcXDqLoR?usp=sharing
 
